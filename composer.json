@@ -1,0 +1,17 @@
+{
+    "name": "hadirizaldi/php-mvc",
+    "description": "Eksplorasi dasar dari MVC dengan bahasa pemrograman PHP",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Hadirizaldi\\PhpMvc\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Hadi Rizaldi R",
+            "email": "hadirizaldi.hr@gmail.com"
+        }
+    ],
+    "require": {}
+}
