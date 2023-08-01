@@ -8,7 +8,7 @@ class Router
 
   public static function add(string $method, string $path, string $controller, string $function): void
   {
-    self::$routes[] = [
+    self::$routes[]  = [
       "method" => $method,
       "path" => $path,
       "controller" => $controller,
@@ -32,8 +32,13 @@ class Router
 
     foreach (self::$routes as $route) {
       if ($route["method"] == $method && $route["path"] == $path) {
-        echo "Controller: " . $route["controller"] . ", Function: " . $route["function"];
+        // echo "Controller: " . $route["controller"] . ", Function: " . $route["function"];
 
+        $function = $route['function'];
+        $controller = new $route['controller'];
+        // echo var_dump($controller);
+
+        $controller->$function();
         return;
       }
     }
