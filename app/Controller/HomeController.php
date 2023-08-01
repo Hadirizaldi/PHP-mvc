@@ -2,11 +2,19 @@
 
 namespace Hadirizaldi\PhpMvc\Controller;
 
+use Hadirizaldi\PhpMvc\App\View;
+
 class HomeController
 {
   public function index(): void
   {
-    echo "HomeController.index()";
+    $model = [
+      "title" => "Belajar PHP MVC",
+      "content" => "Selamat Belajar PHP MVC dari Programmer Zaman Now"
+    ];
+
+    // require __DIR__ . "/../View/Home/index.php";
+    View::render('Home/index', $model);
   }
 
   public function hello(): void
@@ -22,5 +30,20 @@ class HomeController
   public function about(): void
   {
     echo "Author : 'hadi rizaldi r'";
+  }
+
+  function login(): void
+  {
+    $request = [
+      "username" => $_POST['username'],
+      "password" => $_POST['password']
+    ];
+
+    $user = [];
+
+    $response = [
+      "message" => "Login Sukses"
+    ];
+    // kirimkan response ke view
   }
 }
